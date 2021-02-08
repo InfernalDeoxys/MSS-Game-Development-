@@ -1,1 +1,5 @@
 <h1 align=center>T3A05-Forms-Liam.html>/h1>
+We will show lots of different form entries for web pages<br>?
+
+Text: <input id="myText01"" type=text value=LIAM><br>
+Number: <input id="myNum01" type=number value=5><br>
