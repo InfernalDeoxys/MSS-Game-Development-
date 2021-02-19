@@ -13,6 +13,20 @@ parseInt(document.getElementById('mySpan01').style.left) + 10
  }
  
 }">
+<input type=button value="Move 10 pixels left" onClick="{
+//alert( parseInt(document.getElementById('mySpan01').style.right ) 
+                                                         
+document.getElementById('mySpan01').style.right = 
+parseInt(document.getElementById('mySpan01').style.right) + 10
+                                                         
+ if(myHitOther('mySpan01','mySpan02')){
+   // alert('hit')
+   document.getElementById('mySpan02').style.right = '-400px'
+  
+ }
+ 
+}">
+
 
 <script>
 function myHitOther(my1,my2){
