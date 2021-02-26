@@ -1,17 +1,25 @@
 <h1 align=center>T3A10-InOut-LiamN.html</h1>
 
-1. Store this input variable into x:
-<input id="myText01" type=text value=3 ><br>
-2. <input type=button value="run first" onclick="{
- //x = 5
+Store this input variable into x:
+<input id="myText01" type=text value=3 ><br><br>
 
+<input type=button value="Show x" onclick="{
  x = document.getElementById('myText01').value
   //alert('x: '+ x)
- //can you put it into the span???? instead of an alert
- x = document.getElementById('myText01').value
- xSquared = x * x
  document.GetElementById('mySpan01').innerHTML = 
- 'The <b>Square</b> of '+ x + ' is ' + xSquared
+ 'X is '+x
+                                           
  }"><br><br>
 
-3. Span Output <span id="mySpan01" >...</span><br><br>
+<span id="mySpan01" >...</span><br><br>
+
+Store this input variable into x:
+<input id="myText02" type=text value=3 ><br><br>
+
+<input type=button value="Square X" onclick="{
+x = document.getElementById('myText02').value
+// alert('x: ' + x)
+                                             document.getElementById('mySpan02').innerHTML = x+' <b>squared</b> is ' + x*x
+}"><br><br>
+
+<span id="mySpan02 >...</span><br><br>
