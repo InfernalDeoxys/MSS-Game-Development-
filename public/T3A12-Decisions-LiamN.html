@@ -6,16 +6,13 @@
 ! means not
 </pre>
 
-Add an input text, button, and a span
-
 <input id="myText01" type=text value=3 ><br><br>
-
 <input type=button value="Show x" onclick="{
  x = document.getElementById('myText01').value
 myTemp = '......'
-if(x >= 2){myTemp = 'Something'}
- document.GetElementById('mySpan01').innerHTML = myTemp
+if (x >= 2){myTemp = 'Something'}
+document.getElementById('mySpan01').innerHTML = myTemp
                                            
- }"><br><br>
+}"><br><br>
 
 <span id="mySpan01" >...</span><br><br>
