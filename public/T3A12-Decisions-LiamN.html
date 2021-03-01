@@ -1,1 +1,21 @@
 <h1 align=center>T3A12-Decisions-LiamN.html</h1>
+
+<pre>
+|| means or
+&& means and
+! means not
+</pre>
+
+Add an input text, button, and a span
+
+<input id="myText01" type=text value=3 ><br><br>
+
+<input type=button value="Show x" onclick="{
+ x = document.getElementById('myText01').value
+myTemp = '......'
+if(x >= 2){myTemp = 'Something'}
+ document.GetElementById('mySpan01').innerHTML = myTemp
+                                           
+ }"><br><br>
+
+<span id="mySpan01" >...</span><br><br>
