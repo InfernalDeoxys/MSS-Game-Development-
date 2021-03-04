@@ -23,3 +23,14 @@ document.getElementById('mySpan02').innerHTML = x+' <b>squared</b> is ' + x*x
 }"><br><br>
 
 <span id="mySpan02">...</span><br><br>
+
+Store this input variable into x:
+<input id="myText03" type=text value=3 ><br><br>
+
+<input type=button value="Square X" onclick="{
+x = document.getElementById('myText03').value
+// alert('x: ' + x)
+document.getElementById('mySpan03').innerHTML = x+' <b>cubed</b> is ' + x*x*x
+}"><br><br>
+
+<span id="mySpan03">...</span><br><br>
