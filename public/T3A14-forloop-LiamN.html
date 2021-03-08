@@ -32,3 +32,19 @@ document.getElementById('mySpan02').innerHTML = myTemp
 }"><br><br>                                           
 
 <span id="mySpan02">...</span><br><br>
+
+Store this input variable into x:
+<input id="myText03" type=text value=20 ><br><br>
+
+<input type=button value="Show X" onclick="{
+ x = document.getElementById('myText03').value
+
+let myTemp=' ';
+for(let i=0; i<=x; i++){
+myTemp += 'Loop Number: ' + i + '<br>';
+}
+document.getElementById('mySpan03').innerHTML = myTemp                                           
+
+}"><br><br>                                           
+
+<span id="mySpan03">...</span><br><br>
