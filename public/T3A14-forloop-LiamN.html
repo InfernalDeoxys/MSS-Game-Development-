@@ -5,9 +5,13 @@ Store this input variable into x:
 <input id="myText01" type=text value=20 ><br><br>
 
 <input type=button value="Show X" onclick="{
-                                           
+ x = document.getElementById('myText01').value
+  //alert('x: '+ x)
+ document.getElementById('mySpan01').innerHTML = 
+ 'X is '+x
+                                                                                  
 let myTemp=' ';
-for(let i=0; i<100; i++){
+for(let i=0; i<=100; i++){
 myTemp += 'Loop Number: ' + i + '<br>';
 }
 document.getElementById('mySpan01').innerHTML = myTemp                                           
