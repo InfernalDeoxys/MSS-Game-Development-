@@ -7,7 +7,7 @@ Store this input variable into x:
 <input type=button value="Show X" onclick="{
                                            
 let myTemp=' ';
-for(let i=0; i<+x; i++){
+for(let i=0; i<100; i++){
 myTemp += 'Loop Number: ' + i + '<br>';
 }
 document.getElementById('mySpan01').innerHTML = myTemp                                           
@@ -15,3 +15,18 @@ document.getElementById('mySpan01').innerHTML = myTemp
 }"><br><br>                                           
 
 <span id="mySpan01">...</span><br><br>
+
+Store this input variable into x:
+<input id="myText02" type=text value=20 ><br><br>
+
+<input type=button value="Show X" onclick="{
+                                           
+let myTemp=' ';
+for(let i=0; i<100; i++){
+myTemp += 'Loop Number: ' + i + '<br>';
+}
+document.getElementById('mySpan02').innerHTML = myTemp                                           
+
+}"><br><br>                                           
+
+<span id="mySpan02">...</span><br><br>
