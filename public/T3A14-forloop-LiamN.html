@@ -1,4 +1,4 @@
-Version 0.0.13<br>
+Version 0.0.15<br>
 <h1 align=center>T3A14-forloop-LiamN.html</h1>
 
 Store this input variable into x:
@@ -6,12 +6,9 @@ Store this input variable into x:
 
 <input type=button value="Show X" onclick="{
  x = document.getElementById('myText01').value
-  //alert('x: '+ x)
- document.getElementById('mySpan01').innerHTML = 
- 'X is '+x
-                                                                                  
+
 let myTemp=' ';
-for(let i=0; i<=100; i++){
+for(let i=0; i<=x; i++){
 myTemp += 'Loop Number: ' + i + '<br>';
 }
 document.getElementById('mySpan01').innerHTML = myTemp                                           
