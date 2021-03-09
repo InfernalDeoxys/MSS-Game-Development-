@@ -14,17 +14,18 @@
   <h1 align=center>T3A09-events-fred</h1>
   Output span: <span id="mySpan01">...</span><br><br>
   
+     <p><b>Hint:</b>Try using different keys to see what activates!</p>
+     
   Traditional onclick event: <input type=button value="onclick event" onclick="{
     // alert('Hi from onclick');
-      document.getElementById('mySpan01').innerHTML= 'Hi from onclick'
+      document.getElementById('mySpan01').innerHTML= 'See, this button works!'
     }"><br<br>
   
-This is <b> bold </b> this isn't <br>
-This is <b onMouseOver="{
-  document.getElementById('mySpan01').innerHTML = 'Hi from onMouseOver'
-  }"> bold and onMouseOver </b> this isn't <br><br>
+Mouse over <b onMouseOver="{
+  document.getElementById('mySpan01').innerHTML = 'Haha neat huh?'
+  }"> this sentence! </b><br><br>
      
-Which of thse colours do you wish to choose? <select id="mySelector" onchange="myFunction()">
+Which of these colours do you wish to choose? <select id="mySelector" onchange="myFunction()">
   <option value="Red">Red</option>
   <option value="Blue">Blue</option>
   <option value="Green">Green</option>
@@ -39,5 +40,15 @@ function myFunction() {
   document.getElementById("inputter").innerHTML = "You selected: " + x;
 }
 </script>
+     
+<p><strong>Note:</strong> This example is for touch devices only.</p>
 
+<p id="touchme"></p>
+
+<script>
+function myFunction() {
+  document.getElementById("touchme").innerHTML = "I am so touched.";
+}
+</script>
+     
 </body>
