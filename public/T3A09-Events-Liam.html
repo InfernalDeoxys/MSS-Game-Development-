@@ -23,7 +23,21 @@ This is <b> bold </b> this isn't <br>
 This is <b onMouseOver="{
   document.getElementById('mySpan01').innerHTML = 'Hi from onMouseOver'
   }"> bold and onMouseOver </b> this isn't <br><br>
+     
+Which of thse colours do you wish to choose? <select id="mySelector" onchange="myFunction()">
+  <option value="Red">Red</option>
+  <option value="Blue">Blue</option>
+  <option value="Green">Green</option>
+  <option value="Yellow">Yellow</option>
+</select>
+     
+<p id="inputter"></p>
 
-     This is <strong> strong </strong> <br>
-     This is <strong 
+<script>
+function myFunction() {
+  var x = document.getElementById("mySelector").value;
+  document.getElementById("inputter").innerHTML = "You selected: " + x;
+}
+</script>
+
 </body>
