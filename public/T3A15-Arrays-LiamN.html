@@ -1,4 +1,4 @@
-Version 0.0.15<br>
+Version 0.0.16<br>
 
 <h1 align=center>T3A15-Arrays-LiamN.html</h1>
 
@@ -40,7 +40,10 @@ document.getElementById('mySpan01').innerHTML = myTemp
 
 <p id="demo"></p>
 
+<input type=button value="Change Console" onclick="{
+    document.getElementById('demo').innerHTML += document.consoles[0] + '<br>'; 
+ }">                                                  
 <script>
 var consoles = ["Playstation 5", "XBOX One", "Nintendo Switch", "Playstation 4", "Wii U"];
-document.getElementById("demo").innerHTML = consoles[2];
+document.getElementById("demo").innerHTML = consoles[1];
 </script>
