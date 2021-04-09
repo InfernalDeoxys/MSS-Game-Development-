@@ -1,3 +1,4 @@
+Version 1.0.0<br>
 <h1 align=center>T3A12-Decisions-LiamN.html</h1>
 
 <pre>
@@ -32,3 +33,49 @@ document.getElementById('mySpan02').innerHTML = myTemp
 
 <span id="mySpan01" >...</span><br><br>
 <span id="mySpan02" >...</span><br><br>
+
+<input type="number" id="myTextIf" value="4" size="10">     
+    
+<input id="myPush1" type="button" value="Decide Me" onclick="{
+      
+   document.getElementById('mySpan03').innerHTML = '' 
+                                                                    
+   myIf =   document.getElementById('myTextIf').value   
+     
+   if (myIf == 4){                                                                
+      document.getElementById('mySpan03').innerHTML += 'That number equals 4 <br>'
+   }   
+   if (myIf <= 4){                                                                
+      document.getElementById('mySpan03').innerHTML += 'That number is less than 4 <br>'
+   }  
+   if (Math.abs(myIf) == 4){                                                             
+      document.getElementById('mySpan03').innerHTML += 'That number is either positive or negative 4<br>'
+   }  
+   if (myIf < 0){                                                                
+      document.getElementById('mySpan03').innerHTML += 'That number is a negative number<br>'
+   }  
+      if (myIf == 4){                                                                
+      document.getElementById('mySpan03').innerHTML += 'That number is less than or equal to 4 <br>'
+   }   
+   if (myIf >= 4){                                                                
+      document.getElementById('mySpan03').innerHTML += 'That number is greater than or equal to 4 <br>'
+   }   
+   if (myIf != 4){                                                                
+      document.getElementById('mySpan03').innerHTML += 'That number does not equal 4 <br>'
+   }   
+   if ((myIf == 4) || (myIf == 8)) {                                                                
+      document.getElementById('mySpan03').innerHTML += 'That number equals either 4 or 8 <br>'
+   }     
+   if ((myIf == 4) &amp;&amp; (myIf < 8)) {                                                                
+      document.getElementById('mySpan03').innerHTML += 'That number equals 4 and is less than 8 <br>'
+   }     
+ }"><br><br>                                                                           
+                                                                                  
+ <div id='mySpan03'>...</div><br>                                                        
+                                                                     
+                                                                
+                                                                    
+                                                                     
+                                                                        
+                                                                    
+                                                          
