@@ -47,3 +47,19 @@ document.getElementById('mySpan01').innerHTML = myTemp
 var consoles = ["Playstation 5", "XBOX One", "Nintendo Switch", "Playstation 4", "Wii U"];
 document.getElementById("demo").innerHTML = consoles[1];
 </script>
+
+<input type="text" id="myTextArray" value="3, 7, 9" size="10">        
+    
+<input id="myButton1" type="button" value="Store and show array" onclick="{
+                                                              
+      myArray = []
+      document.getElementById('myDiv1').innerHTML = '' 
+                                                              
+      myArray = document.getElementById('myTextArray').value.split(',')     
+                                                              
+      for (myIndex in myArray){                                                                                                                  
+         document.getElementById('myDiv1').innerHTML +=     myIndex + ' stores : ' + myArray[myIndex] + '<br>'
+      }                                                        
+}"><br><br>
+
+<div id='myDiv1'>...</div><br>
