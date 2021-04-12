@@ -7,24 +7,55 @@ Enter an age into the object:
 
 <input type=button value="Make and Show Object" onclick="{
  let myObject = {
-       'firstName':'John',                                                  
-       'age' : 6                                                  
+       'firstName':'John',
+       'lastName':'Doe',                                                  
+       'age' : +x,
+       'eyeColor' : 'blue'
        }
 document.getElementById('mySpan01').innerHTML ='myObject.firstName: ' + myObject.firstName
+document.getElementById('mySpan01').innerHTML ='myObject.lastName: ' + myObject.lastName
+document.getElementById('mySpan01').innerHTML ='myObject.age: ' + myObject.age                                                         
+document.getElementById('mySpan01').innerHTML ='myObject.eyeColor: ' + myObject.eyeColor        
                                                          
 }"><br><br>
 
 <span id="mySpan01">...</span><br><br>
 
-
-<input id="myButton" type="button" value="Store as an object" onclick="{
-      
-    var myPerson = {}                                                              
-    myPerson = JSON.parse(document.getElementById('myTextAreaObject').value)   
-                                                                         
-    document.getElementById('mySpan3').innerHTML = 'Name: ' + myPerson.firstName + ' '+ myPerson.lastName + ', Age: '  + myPerson.age  + ', EyeColor: ' + myPerson.eyeColor + '<br>'
-                                                       
-                                                              
+<input type=button value="Make and Show Object" onclick="{
+ let myObject = {
+       'firstName':'Jane',
+       'lastName':'Smith',                                                  
+       'age' : 26,
+       'eyeColor' : 'brown',
+       'hairColor' : 'black'                                                  
+       }
+document.getElementById('mySpan02').innerHTML ='myObject.firstName: ' + myObject.firstName
+document.getElementById('mySpan02').innerHTML ='myObject.lastName: ' + myObject.lastName
+document.getElementById('mySpan02').innerHTML ='myObject.age: ' + myObject.age                                                         
+document.getElementById('mySpan02').innerHTML ='myObject.eyeColor: ' + myObject.eyeColor 
+document.getElementById('mySpan02').innerHTML ='myObject.hairColor: ' + myObject.hairColor                                                         
+                                                         
 }"><br><br>
 
-<span id="mySpan3">...</span><br><br>
+<span id="mySpan02">...</span><br><br>
+
+<input type=button value="Make and Show Object" onclick="{
+ let myObject = {
+       'firstName':'Aiden',
+       'lastName':'Pearce',                                                  
+       'age' : 18,
+       'eyeColor' :'green',
+       'hairColor' :'black',
+       'birthMonth':'May'                                                  
+       }
+document.getElementById('mySpan03').innerHTML ='myObject.firstName: ' + myObject.firstName
+document.getElementById('mySpan03').innerHTML ='myObject.lastName: ' + myObject.lastName
+document.getElementById('mySpan03').innerHTML ='myObject.age: ' + myObject.age                                                         
+document.getElementById('mySpan03').innerHTML ='myObject.eyeColor: ' + myObject.eyeColor 
+document.getElementById('mySpan03').innerHTML ='myObject.hairColor: ' + myObject.hairColor 
+document.getElementById('mySpan03').innerHTML ='myObject.birthMonth: ' + myObject.birthMonth                                                         
+                                                         
+}"><br><br>
+
+
+<span id="mySpan03">...</span><br><br>
