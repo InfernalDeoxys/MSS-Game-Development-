@@ -6,10 +6,11 @@ Enter an age into the object:
 <input id="myText01" type=text value=17><br><br>
 
 <input type=button value="Make and Show Object" onclick="{
+ x = document.getElementById('mySpan01').value                                                        
  let myObject = {
        'firstName':'John',
        'lastName':'Doe',                                                  
-       'age' : +x,
+       'age' : x,
        'eyeColor' : 'blue'
        }
 document.getElementById('mySpan01').innerHTML ='myObject.firstName: ' + myObject.firstName
