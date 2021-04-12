@@ -1,4 +1,4 @@
-Version 1.0.1<br>
+Version 1.0.2<br>
 
 <h1 align=center>T3A16-Objects-LiamN.html</h1>
 
@@ -6,16 +6,16 @@ Enter an age into the object:
 <input id="myText01" type=text value=17><br><br>
 
 <input type=button value="Make and Show Object" onclick="{
- x = document.getElementById('mySpan01').value                                                        
+ let x = document.getElementById('mySpan01').value                                                        
  let myObject = {
        'firstName':'John',
        'lastName':'Doe',                                                  
        'age' : x,
        'eyeColor' : 'blue'
        }
-document.getElementById('mySpan01').innerHTML ='First Name: ' + myObject.firstName
-document.getElementById('mySpan01').innerHTML +='Last Name: ' + myObject.lastName
-document.getElementById('mySpan01').innerHTML +='Age: ' + myObject.age                                                         
+document.getElementById('mySpan01').innerHTML ='First Name: ' + myObject.firstName + '<br>'
+document.getElementById('mySpan01').innerHTML +='Last Name: ' + myObject.lastName + '<br>'
+document.getElementById('mySpan01').innerHTML +='Age: ' + myObject.age + '<br>'                                                         
 document.getElementById('mySpan01').innerHTML +='Eye Color: ' + myObject.eyeColor        
                                                          
 }"><br><br>
@@ -30,10 +30,10 @@ document.getElementById('mySpan01').innerHTML +='Eye Color: ' + myObject.eyeColo
        'eyeColor' : 'brown',
        'hairColor' : 'black'                                                  
        }
-document.getElementById('mySpan02').innerHTML ='First Name: ' + myObject.firstName
-document.getElementById('mySpan02').innerHTML +='Last Name: ' + myObject.lastName
-document.getElementById('mySpan02').innerHTML +='Age: ' + myObject.age                                                         
-document.getElementById('mySpan02').innerHTML +='Eye Color: ' + myObject.eyeColor 
+document.getElementById('mySpan02').innerHTML ='First Name: ' + myObject.firstName + '<br>'
+document.getElementById('mySpan02').innerHTML +='Last Name: ' + myObject.lastName + '<br>'
+document.getElementById('mySpan02').innerHTML +='Age: ' + myObject.age + '<br>'                                                        
+document.getElementById('mySpan02').innerHTML +='Eye Color: ' + myObject.eyeColor + '<br>' 
 document.getElementById('mySpan02').innerHTML +='Hair Color: ' + myObject.hairColor                                                         
                                                          
 }"><br><br>
@@ -49,11 +49,11 @@ document.getElementById('mySpan02').innerHTML +='Hair Color: ' + myObject.hairCo
        'hairColor' :'black',
        'birthMonth':'May'                                                  
        }
-document.getElementById('mySpan03').innerHTML ='FirstName: ' + myObject.firstName
-document.getElementById('mySpan03').innerHTML +='Last Name: ' + myObject.lastName
-document.getElementById('mySpan03').innerHTML +='Age: ' + myObject.age                                                         
-document.getElementById('mySpan03').innerHTML +='Eye Color: ' + myObject.eyeColor 
-document.getElementById('mySpan03').innerHTML +='Hair Color: ' + myObject.hairColor 
+document.getElementById('mySpan03').innerHTML ='FirstName: ' + myObject.firstName + '<br>'
+document.getElementById('mySpan03').innerHTML +='Last Name: ' + myObject.lastName + '<br>'
+document.getElementById('mySpan03').innerHTML +='Age: ' + myObject.age + '<br>'                                                         
+document.getElementById('mySpan03').innerHTML +='Eye Color: ' + myObject.eyeColor + '<br>' 
+document.getElementById('mySpan03').innerHTML +='Hair Color: ' + myObject.hairColor + '<br>' 
 document.getElementById('mySpan03').innerHTML +='Birth Month: ' + myObject.birthMonth                                                         
                                                          
 }"><br><br>
