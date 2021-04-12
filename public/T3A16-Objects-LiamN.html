@@ -1,4 +1,4 @@
-Version 1.0.3<br>
+Version 1.0.4<br>
 
 <h1 align=center>T3A16-Objects-LiamN.html</h1>
 
@@ -6,12 +6,11 @@ Enter an age into the object:
 <input id="myText01" type=text value=17><br><br>
 
 <input type=button value="Make and Show Object" onclick="{
- let x = document.getElementById('mySpan01').value
- alert('X is: '+x)                                                        
+ let x = document.getElementById('mySpan01').value                                                      
  let myObject = {
        'firstName':'John',
        'lastName':'Doe',                                                  
-       'age' : x,
+       'age' : 'X is: '+x,
        'eyeColor' : 'blue'
        }
 document.getElementById('mySpan01').innerHTML ='First Name: ' + myObject.firstName + '<br>'
