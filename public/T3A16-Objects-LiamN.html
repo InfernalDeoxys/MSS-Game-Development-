@@ -22,12 +22,17 @@ document.getElementById('mySpan01').innerHTML +='Eye Color: ' + myObject.eyeColo
 
 <span id="mySpan01">...</span><br><br>
 
+<input id="myText02a" type=text value=26><br><br>
+<input id="myText02b" type=text value=brown><br><br>
+
 <input type=button value="Make and Show Object" onclick="{
+ let x = document.getElementById('myText02a').value
+ let y = document.getElementById('myText02b').value                                                        
  let myObject = {
        'firstName':'Jane',
        'lastName':'Smith',                                                  
-       'age' : 26,
-       'eyeColor' : 'brown',
+       'age' : x,
+       'eyeColor' : y,
        'hairColor' : 'black'                                                  
        }
 document.getElementById('mySpan02').innerHTML ='First Name: ' + myObject.firstName + '<br>'
@@ -40,14 +45,21 @@ document.getElementById('mySpan02').innerHTML +='Hair Color: ' + myObject.hairCo
 
 <span id="mySpan02">...</span><br><br>
 
+<input id="myText03a" type=text value=18><br>
+<input id="myText03b" type=text value=green><br>
+<input id="myText03c" type=text value=May><br>
+
 <input type=button value="Make and Show Object" onclick="{
+ let x = document.getElementById('myText03a').value
+ let y = document.getElementById('myText03b').value
+ let z = document.getElementById('myText03c').value                                                        
  let myObject = {
        'firstName':'Aiden',
        'lastName':'Pearce',                                                  
-       'age' : 18,
-       'eyeColor' :'green',
+       'age' : x,
+       'eyeColor' : y,
        'hairColor' :'black',
-       'birthMonth':'May'                                                  
+       'birthMonth': z                                                  
        }
 document.getElementById('mySpan03').innerHTML ='First Name: ' + myObject.firstName + '<br>'
 document.getElementById('mySpan03').innerHTML +='Last Name: ' + myObject.lastName + '<br>'
