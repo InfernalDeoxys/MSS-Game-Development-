@@ -30,6 +30,18 @@ function myHitOther(my1,my2){
 Version 0.0.1<br>
 <h1 align=center>T4A02-MazeGame-LiamN.html</h1>
 
+<input type=button value="Move 10 pixels left" onClick="{
+   //alert( parseInt(document.getElementById('mySpan01').style.left) ) 
+                          
+document.getElementById('mySpan01').style.left = 
+parseInt(document.getElementById('mySpan01').style.left) - document.myXpixels
+
+if(myHitOther('mySpan01', 'mySpan02')){
+   document.getElementById('mySpan01').style.left = 
+      parseInt(document.getElementById('mySpan01').style.left) - document.myXpixels
+}
+}">
+
 <input type=button value="Move 10 pixels right" onClick="{
    //alert( parseInt(document.getElementById('mySpan01').style.left) ) 
                           
@@ -40,8 +52,30 @@ if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) - document.myXpixels
 }
+}">
 
-                        
+<input type=button value="Move 10 pixels up" onClick="{
+   //alert( parseInt(document.getElementById('mySpan01').style.top) ) 
+                          
+document.getElementById('mySpan01').style.top = 
+parseInt(document.getElementById('mySpan01').style.top) - document.myYpixels
+
+if(myHitOther('mySpan01', 'mySpan02')){
+   document.getElementById('mySpan01').style.top = 
+      parseInt(document.getElementById('mySpan01').style.top) - document.myYpixels
+}
+}">
+
+<input type=button value="Move 10 pixels down" onClick="{
+   //alert( parseInt(document.getElementById('mySpan01').style.top) ) 
+                          
+document.getElementById('mySpan01').style.top = 
+parseInt(document.getElementById('mySpan01').style.top) + document.myYpixels
+
+if(myHitOther('mySpan01', 'mySpan02')){
+   document.getElementById('mySpan01').style.top = 
+      parseInt(document.getElementById('mySpan01').style.top) - document.myYpixels
+}
 }">
 
 <span id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30"> 
