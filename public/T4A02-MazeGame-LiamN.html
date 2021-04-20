@@ -27,7 +27,7 @@ function myHitOther(my1,my2){
 
 
 
-Version 0.0.3<br>
+Version 0.0.4<br>
 <h1 align=center>T4A02-MazeGame-LiamN.html</h1>
 
 <input type=button value="Move 10 pixels left" onClick="{
@@ -50,7 +50,7 @@ parseInt(document.getElementById('mySpan01').style.left) + document.myXpixels
 
 if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
-      parseInt(document.getElementById('mySpan01').style.left) - document.myXpixels
+      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myXpixels)
 }
 }">
 
