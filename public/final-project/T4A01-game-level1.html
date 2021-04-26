@@ -23,11 +23,6 @@ function myHitOther(my1,my2){
 function myCheckAll(){
 
   if(myHitOther('mySpan01', 'mySpan02')){
-    document.getElementById('mySpan02').style.left = '-400px'
-    document.getElementById('myText').value = parseInt(document.getElementById('myTextScore').value) + 1
-  }
-
-  if(myHitOther('mySpan01', 'mySpan03')){
     document.getElementById('myTextLife').value = parseInt(document.getElementById('myTextLife').value) - 1
   }
 
@@ -40,10 +35,10 @@ function myCheckAll(){
     location = 'T4A06-score-fred.html'    // refresh page
   }
 
-  if(myHitOther('mySpan01', 'mySpan09')){
-    document.getElementById('mySpan09').style.left = '-400px'
+  if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life points at zero
+    document.getElementById('mySpan02').style.left = '-400px'
     alert('You Win!')
-    location = 'https://google.ca'
+    location = 'T4A01b-game-level2.html'
   }
 
 
