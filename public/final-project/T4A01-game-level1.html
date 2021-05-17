@@ -70,7 +70,7 @@ function myCheckAll(){
 
 <h1 align=center>Final Project - Level 1: First Fight</h1>
 
-<p id="demo">What will you do?</p><br><br>
+<p id="demo" style="color:white">What will you do?</p><br><br>
 <input type=button value="Move 10 pixels right" onClick="{
                         
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
@@ -87,15 +87,19 @@ function myCheckAll(){
 <br>
 <select size=1 id="AttackMenu>
   <option value="Attack">Normal Attack
+  <script>
+  function myCheckAll(){
      if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
   }
-
-  <option value="RusticForce">YRustic Strike
+  </option>
+  <option value="RusticForce">Rustic Strike
+ <script>
+  function myCheckAll(){
      if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
   }
-
+  </option>
 </select><br>
 
 <script>
