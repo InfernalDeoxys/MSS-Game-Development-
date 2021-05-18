@@ -29,10 +29,6 @@ function myHitOther(my1,my2){
    }
 }
 
-if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
-    document.myXmove = document.myXmove * -1   // then bounce
-}
-
 function myCheckAll(){
 
   if(myHitOther('mySpan01', 'mySpan02')){
@@ -54,14 +50,6 @@ function myCheckAll(){
     location = 'T4A01b-game-level2.html'
   }
 
-if (parseInt(document.getElementById('mySpan01').style.left) < 10) {  // if we hit the left wall
-    document.myXmove = document.myXmove * -1   // then bounce
-}
-
-if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
-    document.myXmove = document.myXmove * -1   // then bounce
-}
-
 
 
 }
@@ -71,7 +59,7 @@ function normalattack(){
             }
 
 function rusticstrike(){
-  
+  alert("hi");
             }
    
    function myXAuto(){
