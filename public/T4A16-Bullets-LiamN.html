@@ -56,14 +56,14 @@ for (let x=1;  x <= document.myBulletMax; x++){
   if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('mySpan02').style.left = '-400px'
     alert('You Lose!')
-    location = 'T4A16-bullet-name.html'
+    location = 'T4A16-Bullets-LiamN.html'
   }
 
 
   if(myHitOther('mySpan01', 'mySpan03')){
     document.getElementById('mySpan03').style.left = '-400px'
     alert('You Win!')
-    location = 'https://google.ca'
+    location = 'T4A16-Bullets-LiamN.html'
   }
 
   // your other checks go here
@@ -101,14 +101,25 @@ function myBulletFire(){
                         
 }">
 
-<input type=button value="right" onClick="{
+<input type=button value="Move Right" onClick="{
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
 
   myCheckAll()
                         
 }">
 
-
+<input type=button value="Move Down" onClick="{
+//alert( parseInt(document.getElementById('mySpan01').style.top) )
+                                                         
+document.getElementById('mySpan01').style.top = 
+parseInt(document.getElementById('mySpan01').style.top) + 10
+                                                         
+ if(myHitOther( 'mySpan01', 'mySpan02' )){
+    // alert('hit')
+  document.getElementById('mySpan02').style.top = '-400px'
+  
+ }
+ }">
 
 <span title="1" id="mySpan01" style="position:absolute; left:100; top:150; width:45; height:30">
    Span 1 </span><br>
