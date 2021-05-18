@@ -57,9 +57,6 @@ function myCheckAll(){
     alert('You Win!')
     location = 'T4A01b-game-level2.html'
   }
-if (parseInt(document.getElementById('mySpan01').style.left) < 10) {  // if we hit the left wall
-    document.myXmove = document.myXmove * -1   // then bounce
-}
 
 if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
     document.myXmove = document.myXmove * -1   // then bounce
@@ -76,6 +73,15 @@ function normalattack(){
 function rusticstrike(){
   
             }
+   
+   function myXAuto(){
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
+  ranX1 = Math.floor(Math.random()*20) -10
+  ranY1 = Math.floor(Math.random()*15) -8
+  document.getElementById('mySpan02').style.left = parseInt(document.getElementById('mySpan02').style.left) + ranX1
+  document.getElementById('mySpan02').style.top  = parseInt(document.getElementById('mySpan02').style.top) + ranY1
+   }
+   
 </script>
 </head>
 
@@ -111,6 +117,12 @@ function rusticstrike(){
                         
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 10
   myCheckAll()
+                        
+}">
+   
+<input type=button value="Move 10 right Auto" onClick="{
+    clearInterval(document.myXtimer)                    
+    document.myXtimer = setInterval( myXAuto , document.myXspeed);
                         
 }">
 
