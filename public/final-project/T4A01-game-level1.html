@@ -35,7 +35,13 @@ function myCheckAll(){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
   }
 
+if (parseInt(document.getElementById('mySpan01').style.left) < 10) {  // if we hit the left wall
+    document.myXmove = document.myXmove * -1   // then bounce
+}
 
+if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
+    document.myXmove = document.myXmove * -1   // then bounce
+}
 
   // your other checks go here
 
@@ -62,6 +68,11 @@ function rusticstrike(){
   alert("hi");
             }
    
+   function myXAuto(){
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
+  ranX1 = Math.floor(Math.random()*20) -10
+  ranY1 = Math.floor(Math.random()*15) -8
+   }
 </script>
 </head>
 
@@ -97,6 +108,12 @@ function rusticstrike(){
                         
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 10
   myCheckAll()
+                        
+}">
+   
+<input type=button value="Move 10 right Auto" onClick="{
+    clearInterval(document.myXtimer)                    
+    document.myXtimer = setInterval( myXAuto , document.myXspeed);
                         
 }">
    
