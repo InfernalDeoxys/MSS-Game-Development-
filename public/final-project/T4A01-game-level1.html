@@ -98,10 +98,14 @@ function rusticstrike(){
 
 <p id="demo" style="color:white">What will you do?</p><br><br>
 <input type=button value="Move 10 pixels right" onClick="{
-                        
-  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
-  myCheckAll()
-                        
+   //alert( parseInt(document.getElementById('mySpan01').style.left) ) 
+                          
+document.getElementById('mySpan01').style.left = 
+parseInt(document.getElementById('mySpan01').style.left) + document.myXpixels
+if(myHitOther('mySpan01', 'mySpan02')){
+   document.getElementById('mySpan01').style.left = 
+      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myXpixels)
+}
 }">
 
 <input type=button value="Move 10 pixels Left" onClick="{
