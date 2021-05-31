@@ -2,6 +2,16 @@
 <head>
 
 <script>
+   
+document.myXmove = 5   
+document.myYmove = 4
+
+document.myXspeed = 50 
+document.myYspeed = 20 
+
+document.myXtimer = 0;
+document.myYtimer = 0;
+   
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -19,34 +29,51 @@ function myHitOther(my1,my2){
    }
 }
 
-
 function myCheckAll(){
 
   if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
   }
 
+if (parseInt(document.getElementById('mySpan01').style.left) < 10) {  // if we hit the left wall
+    document.myXmove = document.myXmove * -1   // then bounce
+}
 
+if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
+    document.myXmove = document.myXmove * -1   // then bounce
+}
 
   // your other checks go here
 
   if(parseInt(document.getElementById('myTextLife1').value)  <=0  ){    // life points at zero
     alert('You Lose!')
-    location = 'T4A06-score-fred.html'    // refresh page
+    location = 'T4A01-game-level1.html'    // refresh page
   }
 
   if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life points at zero
     document.getElementById('mySpan02').style.left = '-400px'
     alert('You Win!')
-    location = 'T4A01b-game-level2.html'
+    location = 'T4A01b-game-level2a.html'
   }
-
 
 
 
 }
 
+function normalattack(){
+ document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 100
+  myCheckAll();
+            }
 
+function rusticstrike(){
+  alert("hi");
+            }
+   
+   function myXAuto(){
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
+  ranX1 = Math.floor(Math.random()*20) -10
+  ranY1 = Math.floor(Math.random()*15) -8
+   }
 </script>
 </head>
 
@@ -54,10 +81,13 @@ function myCheckAll(){
 <body style="background-color: #666666;" onKeyDown="{
      let myAlphaKey = event.key
      document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
+
+
       if (myAlphaKey.toLowerCase() == 'arrowright') {
          document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
          myCheckAll()
      }
+
       if (myAlphaKey.toLowerCase() == 'd') {   // go right
          document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
          myCheckAll()
@@ -69,8 +99,7 @@ function myCheckAll(){
 
 <p id="demo" style="color:white">What will you do?</p><br><br>
 <input type=button value="Move 10 pixels right" onClick="{
-                        
-  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
+ document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
   myCheckAll()
                         
 }">
@@ -81,9 +110,15 @@ function myCheckAll(){
   myCheckAll()
                         
 }">
-
-<select size=1 id="AttackMenu>
-<option value="Attack">Normal Attack
+   
+<input type=button value="Move 10 right Auto" onClick="{
+    clearInterval(document.myXtimer)                    
+    document.myXtimer = setInterval( myXAuto , document.myXspeed);
+                        
+}">
+   
+<select size=1 id="AttackMenu" value="--">
+<option value="Blank">--
 <option value="Attack">Normal Attack
 <option value="RusticForce">Rustic Strike
 </select><br>
@@ -93,8 +128,8 @@ function myCheckAll(){
 
 
 <section align="center" style="position:static; width:1400px; height: 300px; border: 2px solid black; border-radius:5px; margin: 5px auto; background-color:#123456">
-<img src="Jyles-Idle.gif" id="mySpan01" title="Player" style="position:absolute; left:200; top:310; width:100px; height:100px"></img><br>
-<img src="Enemy.gif" id="mySpan02" title="Opponent" style="position:absolute; left:1300; top:310; width:100px; height:100px;"></img><br>
+<img src="Jyles-Idle.gif" id="mySpan01" title="Player" style="position:absolute; left:200; top:310; width:100px; height:100px; z-index:1"></img><br>
+<img src="Enemy.gif" id="mySpan02" title="Opponent" style="position:absolute; left:1300; top:310; width:100px; height:100px; z-index:0"></img><br>
 </section>
 <section align=center style="position:static; width:1400px; height: 100px; border: 2px solid black; border-radius:5px; margin: 5px auto; background-color:black; color:white">
 <table border="2" align=center style="color: white; text-align: center; margin: 5px auto; background-color:black;">
