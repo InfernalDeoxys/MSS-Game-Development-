@@ -60,14 +60,6 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
 
 }
 
-function normalattack(){
- document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 100
-  myCheckAll();
-            }
-
-function rusticstrike(){
-  alert("hi");
-            }
    
    function myXAuto(){
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
@@ -124,22 +116,20 @@ function rusticstrike(){
 }">
 <option value="Blank">--
 <option value="Attack">Normal Attack
+   <script type="text/javascript">
+      function normalattack(){
+ document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 100
+  myCheckAll();
+            } 
+   </script>
 <option value="RusticForce">Rustic Strike
+<script type="text/javascript">
+function rusticstrike(){
+  alert("hi");
+            }
+   </script>
 </select><br>
 
-   <select id="ddlFruits" onchange="GetSelectedTextValue(this)">
-    <option value=""></option>
-    <option value="1">Apple</option>
-    <option value="2">Mango</option>
-    <option value="3">Orange</option>
-</select>
-<script type="text/javascript">
-    function GetSelectedTextValue(ddlFruits) {
-        var selectedText = ddlFruits.options[ddlFruits.selectedIndex].innerHTML;
-        var selectedValue = ddlFruits.value;
-        alert("Selected Text: " + selectedText + " Value: " + selectedValue);
-    }
-</script>
 
 <div id="myDiv01">...</div>
 
