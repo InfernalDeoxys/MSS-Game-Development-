@@ -115,7 +115,12 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
   myCheckAll();
 }">
 <option value="Blank">--
-<option value="Attack">Normal Attack
+<option value="Attack"onChange="{
+ //alert()
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 100
+  myCheckAll();
+}">Normal Attack
+   
    <script type="text/javascript">
       function normalattack(){
  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 100
