@@ -116,6 +116,8 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
 
  if (this.value=='Attack'){
         alert('attack')
+        document.getElementById('mySpan01').style.left = 
+parseInt(document.getElementById('mySpan01').style.left) + document.myXpixels                                 
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myXpixels)
@@ -123,6 +125,8 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
         }
 if (this.value=='RusticStrike'){
         alert('rusticstrike')
+        document.getElementById('mySpan01').style.left = 
+parseInt(document.getElementById('mySpan01').style.left) + document.myXpixels                                 
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myXpixels)
