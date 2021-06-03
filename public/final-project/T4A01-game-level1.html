@@ -68,7 +68,7 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
    }
    
    document.myX1pixels = 100
-   document.myX2pixels = 1200
+   document.myZpixels = 1200
   document.myYpixels = 70
    
 </script>
@@ -128,10 +128,10 @@ parseInt(document.getElementById('mySpan01').style.left) + document.myX1pixels
 if (this.value=='RusticStrike'){
         alert('rusticstrike')
         document.getElementById('mySpan01').style.left = 
-parseInt(document.getElementById('mySpan01').style.left) + document.myX2pixels                                 
+parseInt(document.getElementById('mySpan01').style.left) + document.myZpixels                                 
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
-      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX2pixels)
+      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myZpixels)
 }                                 
         }                                        
 }">
