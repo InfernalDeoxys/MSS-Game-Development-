@@ -120,7 +120,8 @@ parseInt(document.getElementById('mySpan01').style.left) + document.myX1pixels
 if (this.value=='RusticStrike'){
         alert('rusticstrike')
         document.getElementById('mySpan01').style.left = 
-parseInt(document.getElementById('mySpan01').style.left) + document.myX2pixels                                 
+parseInt(document.getElementById('mySpan01').style.left) + document.myX2pixels 
+document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 7                                         
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX2pixels)
@@ -131,6 +132,7 @@ parseInt(document.getElementById('mySpan01').style.left) + document.myX2pixels
 <option value="Attack">Normal Attack
 <option value="RusticStrike">Rustic Strike
 </select><br>
+
 
 
 <div id="myDiv01">...</div>
