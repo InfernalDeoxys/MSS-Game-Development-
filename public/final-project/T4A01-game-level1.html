@@ -67,7 +67,8 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
   ranY1 = Math.floor(Math.random()*15) -8
    }
    
-   document.myXpixels = 100
+   document.myX1pixels = 100
+   document.myX2pixels = 200
   document.myYpixels = 70
    
 </script>
@@ -118,19 +119,19 @@ if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.inner
  if (this.value=='Attack'){
         alert('attack')
         document.getElementById('mySpan01').style.left = 
-parseInt(document.getElementById('mySpan01').style.left) + document.myXpixels                                 
+parseInt(document.getElementById('mySpan01').style.left) + document.myX1pixels                                 
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
-      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myXpixels)
+      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX1pixels)
 }                                 
         }
 if (this.value=='RusticStrike'){
         alert('rusticstrike')
         document.getElementById('mySpan01').style.left = 
-parseInt(document.getElementById('mySpan01').style.left) + document.myXpixels                                 
+parseInt(document.getElementById('mySpan01').style.left) + document.myX2pixels                                 
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
-      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myXpixels)
+      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX2pixels)
 }                                 
         }                                        
 }">
