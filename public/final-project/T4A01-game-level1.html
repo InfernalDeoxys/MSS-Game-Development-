@@ -6,7 +6,7 @@
 document.myXmove = 5   
 document.myYmove = 4
 
-document.myXspeed = 50 
+document.myXspeed = 10 
 document.myYspeed = 20 
 
 document.myXtimer = 0;
@@ -57,7 +57,7 @@ function mySpecialRecoil(){
 
 }
    
-   document.myX1pixels = 900
+   document.myX1pixels = 950
    document.myX2pixels = 750
   document.myYpixels = 70
    
@@ -113,6 +113,7 @@ parseInt(document.getElementById('mySpan01').style.left) + document.myX1pixels
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX1pixels)
+      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                   
 }                                 
         }
 if (this.value=='RusticStrike'){
@@ -121,10 +122,11 @@ if (this.value=='RusticStrike'){
         document.myXtimer = setInterval( myXAuto , document.myXspeed);                                 
         document.getElementById('mySpan01').style.left = 
 parseInt(document.getElementById('mySpan01').style.left) + document.myX2pixels 
-document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 7                                         
+document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 2                                         
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX2pixels)
+      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                   
 }                                 
         }                                        
 }">
