@@ -112,9 +112,7 @@ function mySpecialRecoil(){
  if (this.value=='Attack'){
         alert('You strike with your weapon!')
         setTimeout(document.myXtimer)
-        document.myXtimer = setInterval( myXAuto , document.myXspeed);
-        document.getElementById('mySpan01').style.left = 
-parseInt(document.getElementById('mySpan01').style.left) + document.myX1pixels                                 
+        document.myXtimer = setInterval( myXAuto , document.myXspeed);                                
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX1pixels)
