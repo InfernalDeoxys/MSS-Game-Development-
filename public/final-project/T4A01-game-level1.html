@@ -33,7 +33,7 @@ if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
    document.myXmove = document.myXmove * -1
   }
-   if (parseInt(document.getElementById('mySpan01').style.left) = 200) {  // if we hit the left wall
+   if (parseInt(document.getElementById('mySpan01').style.left) < 200) {  // if we hit the left wall
     document.myXmove = document.myXmove * -1   // then bounce
     clearTimeout(document.myXtimer);  
 }
