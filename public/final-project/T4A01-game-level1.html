@@ -28,20 +28,10 @@ function myHitOther(my1,my2){
        return true
    }
 }
-function myXAuto(){
-  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
-}
-   
 function myCheckAll(){
 if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
   }
-if (parseInt(document.getElementById('mySpan01').style.left) < 10) {  // if we hit the left wall
-    document.myXmove = document.myXmove * -1   // then bounce
-}
-if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
-    document.myXmove = document.myXmove * -1   // then bounce
-}
 if(parseInt(document.getElementById('myTextLife1').value)  <=0  ){    // life points at zero
     alert('You Lose!')
     location = 'T4A01-game-level1.html'    // refresh page
@@ -84,6 +74,27 @@ function mySpecialRecoil(){
 
 <h1 align=center>Final Project - Level 1: First Fight</h1>
 
+<p id="demo" style="color:white">What will you do?</p><br><br>
+<input type=button value="Move 10 pixels right" onClick="{
+ document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
+  myCheckAll()
+                        
+}">
+
+<input type=button value="Move 10 pixels Left" onClick="{
+                        
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 10
+  myCheckAll()
+                        
+}">
+   
+<input type=button value="Move 10 right Auto" onClick="{
+    clearInterval(document.myXtimer)                    
+    document.myXtimer = setInterval( myXAuto , document.myXspeed);
+                        
+}">
+   
+   
 <select size=1 id="AttackMenu" onChange="{
  //alert()
  if (this.value=='Attack'){
