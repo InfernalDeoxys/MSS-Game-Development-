@@ -31,7 +31,16 @@ function myHitOther(my1,my2){
 function myCheckAll(){
 if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
+   document.myXmove = document.myXmove * -1
   }
+   if (parseInt(document.getElementById('mySpan01').style.left) < 10) {  // if we hit the left wall
+    document.myXmove = document.myXmove * -1   // then bounce
+}
+
+if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
+    document.myXmove = document.myXmove * -1   // then bounce
+}
+
 if(parseInt(document.getElementById('myTextLife1').value)  <=0  ){    // life points at zero
     alert('You Lose!')
     location = 'T4A01-game-level1.html'    // refresh page
@@ -42,7 +51,9 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
     location = 'T4A01b-game-level2a.html'
   }
 }
-   
+   function myXAuto(){
+  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
+}
 function mySpecialRecoil(){
 
 }
