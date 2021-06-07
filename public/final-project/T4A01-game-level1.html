@@ -110,7 +110,9 @@ function mySpecialRecoil(){
 <select size=1 id="AttackMenu" onChange="{
  //alert()
  if (this.value=='Attack'){
-        alert('attack')
+        alert('You strike with your weapon!')
+        setTimeout(document.myXtimer)
+        document.myXtimer = setInterval( myXAuto , document.myXspeed);
         document.getElementById('mySpan01').style.left = 
 parseInt(document.getElementById('mySpan01').style.left) + document.myX1pixels                                 
         if(myHitOther('mySpan01', 'mySpan02')){
@@ -120,7 +122,7 @@ parseInt(document.getElementById('mySpan01').style.left) + document.myX1pixels
 }                                 
         }
 if (this.value=='RusticStrike'){
-        alert('rusticstrike')
+        alert('You used the speciality "Rustic Strike"!')
         setTimeout(document.myXtimer)
         document.myXtimer = setInterval( myXAuto , document.myXspeed);                                 
         document.getElementById('mySpan01').style.left = 
