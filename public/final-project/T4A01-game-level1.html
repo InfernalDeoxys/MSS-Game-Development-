@@ -28,7 +28,8 @@ function myHitOther(my1,my2){
        return true
    }
 }
-   if(myHitOther('mySpan01', 'mySpan02')){
+function myCheckAll(){
+if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
    document.myXmove = document.myXmove * -1
   }
@@ -54,6 +55,10 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
   myCheckAll()    
 }
+function mySpecialRecoil(){
+
+}
+   
    document.myX1pixels = 995
    document.myX2pixels = 750
   document.myYpixels = 70
@@ -63,10 +68,11 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
 
 
 <body style="background-color: #666666;">
+
 <h1 align=center>Final Project - Level 1: First Fight</h1>
 
 <p id="demo" style="color:white">What will you do?</p><br><br>
-
+  
 <select size=1 id="AttackMenu" onChange="{
  //alert()
  if (this.value=='Attack'){
@@ -76,7 +82,7 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX1pixels)
-      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                     
+      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                   
 }                                 
         }
 if (this.value=='RusticStrike'){
@@ -89,7 +95,8 @@ document.getElementById('myTextLife2').value = parseInt(document.getElementById(
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX2pixels)
-      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                        
+      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                   
+}                                 
         }                                        
 }">
 <option value="Blank">--
