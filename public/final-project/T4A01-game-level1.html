@@ -12,6 +12,18 @@ document.myYspeed = 200
 document.myXtimer = 0;
 document.myYtimer = 0;
    
+document.myNumBullets = 1;
+document.myBulletMax  = 4;
+
+
+document.myBulletMove = 7   // amount it moves in pixels
+
+document.myBulletDelay = 20 // speed as a delay in milliseconds bigger is slower
+
+document.myBulleTimer = 0;
+   
+document.myBulletMove = 5
+   
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -29,7 +41,15 @@ function myHitOther(my1,my2){
    }
 }
 function myCheckAll(){
-if(myHitOther('mySpan01', 'mySpan02')){
+for (let x=1;  x <= document.myBulletMax; x++){ 
+   if (parseInt(document.getElementById('myBullet'+x).style.left) < 200) {  // if we hit the right wall
+       document.getElementById('myBullet'+x).style.left = document.getElementById('mySpan01').style.left
+       document.getElementById('myBullet'+x).style.visibility= 'hidden'
+    }
+if (myHitOther('myBullet'+x, 'mySpan01')){
+      document.getElementById('myTextLife1').value = parseInt(document.getElementById('myTextLife1').value) - 1
+   }
+   if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
    document.myXmove = document.myXmove * -1
   }
@@ -55,8 +75,14 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
   myCheckAll()    
 }
-function mySpecialRecoil(){
+   
+   function myBulletFire(){
 
+  for (let x=1;  x <= document.myBulletMax; x++){
+     document.getElementById('myBullet'+x).style.left = parseInt(document.getElementById('myBullet'+x).style.left) + document.myBulletMove
+  }
+
+  myCheckAll()
 }
    
    document.myX1pixels = 995
@@ -116,7 +142,16 @@ function mySpecialRecoil(){
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX1pixels)
-      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                   
+      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3   
+      
+      document.myNumBullets += 1
+    if (document.myNumBullets > document.myBulletMax){
+       document.myNumBullets = 1
+    }
+    document.getElementById('myBullet' + document.myNumBullets).style.left = document.getElementById('mySpan01').style.left
+    document.getElementById('myBullet' + document.myNumBullets).style.visibility= 'visible'
+    clearInterval(document.myBulletTimer)                    
+    document.myBulletTimer = setInterval( myBulletFire , document.myBulletDelay);                                   
 }                                 
         }
 if (this.value=='RusticStrike'){
@@ -129,7 +164,16 @@ document.getElementById('myTextLife2').value = parseInt(document.getElementById(
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX2pixels)
-      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                   
+      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3  
+                                         
+      document.myNumBullets += 1
+    if (document.myNumBullets > document.myBulletMax){
+       document.myNumBullets = 1
+    }
+    document.getElementById('myBullet' + document.myNumBullets).style.left = document.getElementById('mySpan01').style.left
+    document.getElementById('myBullet' + document.myNumBullets).style.visibility= 'visible'
+    clearInterval(document.myBulletTimer)                    
+    document.myBulletTimer = setInterval( myBulletFire , document.myBulletDelay);                                   
 }                                 
         }                                        
 }">
