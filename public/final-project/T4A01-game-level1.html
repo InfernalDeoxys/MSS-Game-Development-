@@ -12,18 +12,6 @@ document.myYspeed = 200
 document.myXtimer = 0;
 document.myYtimer = 0;
    
-document.myNumBullets = 1;
-document.myBulletMax  = 4;
-
-
-document.myBulletMove = 7   // amount it moves in pixels
-
-document.myBulletDelay = 20 // speed as a delay in milliseconds bigger is slower
-
-document.myBulleTimer = 0;
-   
-document.myBulletMove = 5
-   
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -40,15 +28,6 @@ function myHitOther(my1,my2){
        return true
    }
 }
-function myCheckAll(){
-for (let x=1;  x <= document.myBulletMax; x++){ 
-   if (parseInt(document.getElementById('myBullet'+x).style.left) < 200) {  // if we hit the right wall
-       document.getElementById('myBullet'+x).style.left = document.getElementById('mySpan01').style.left
-       document.getElementById('myBullet'+x).style.visibility= 'hidden'
-    }
-if (myHitOther('myBullet'+x, 'mySpan01')){
-      document.getElementById('myTextLife1').value = parseInt(document.getElementById('myTextLife1').value) - 1
-   }
    if(myHitOther('mySpan01', 'mySpan02')){
     document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 1
    document.myXmove = document.myXmove * -1
@@ -75,16 +54,6 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
   document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
   myCheckAll()    
 }
-   
-   function myBulletFire(){
-
-  for (let x=1;  x <= document.myBulletMax; x++){
-     document.getElementById('myBullet'+x).style.left = parseInt(document.getElementById('myBullet'+x).style.left) + document.myBulletMove
-  }
-
-  myCheckAll()
-}
-   
    document.myX1pixels = 995
    document.myX2pixels = 750
   document.myYpixels = 70
@@ -93,46 +62,11 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
 </head>
 
 
-<body style="background-color: #666666;" onKeyDown="{
-     let myAlphaKey = event.key
-     document.getElementById('myDiv01').innerHTML = 'You typed: ' + myAlphaKey.toLowerCase()
-
-
-      if (myAlphaKey.toLowerCase() == 'arrowright') {
-         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
-         myCheckAll()
-     }
-
-      if (myAlphaKey.toLowerCase() == 'd') {   // go right
-         document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
-         myCheckAll()
-      }
-}">
-
-
+<body>
 <h1 align=center>Final Project - Level 1: First Fight</h1>
 
 <p id="demo" style="color:white">What will you do?</p><br><br>
-<input type=button value="Move 10 pixels right" onClick="{
- document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + 10
-  myCheckAll()
-                        
-}">
 
-<input type=button value="Move 10 pixels Left" onClick="{
-                        
-  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) - 10
-  myCheckAll()
-                        
-}">
-   
-<input type=button value="Move 10 right Auto" onClick="{
-    clearInterval(document.myXtimer)                    
-    document.myXtimer = setInterval( myXAuto , document.myXspeed);
-                        
-}">
-   
-   
 <select size=1 id="AttackMenu" onChange="{
  //alert()
  if (this.value=='Attack'){
@@ -142,16 +76,7 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX1pixels)
-      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3   
-      
-      document.myNumBullets += 1
-    if (document.myNumBullets > document.myBulletMax){
-       document.myNumBullets = 1
-    }
-    document.getElementById('myBullet' + document.myNumBullets).style.left = document.getElementById('mySpan01').style.left
-    document.getElementById('myBullet' + document.myNumBullets).style.visibility= 'visible'
-    clearInterval(document.myBulletTimer)                    
-    document.myBulletTimer = setInterval( myBulletFire , document.myBulletDelay);                                   
+      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                     
 }                                 
         }
 if (this.value=='RusticStrike'){
@@ -164,17 +89,7 @@ document.getElementById('myTextLife2').value = parseInt(document.getElementById(
         if(myHitOther('mySpan01', 'mySpan02')){
    document.getElementById('mySpan01').style.left = 
       parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX2pixels)
-      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3  
-                                         
-      document.myNumBullets += 1
-    if (document.myNumBullets > document.myBulletMax){
-       document.myNumBullets = 1
-    }
-    document.getElementById('myBullet' + document.myNumBullets).style.left = document.getElementById('mySpan01').style.left
-    document.getElementById('myBullet' + document.myNumBullets).style.visibility= 'visible'
-    clearInterval(document.myBulletTimer)                    
-    document.myBulletTimer = setInterval( myBulletFire , document.myBulletDelay);                                   
-}                                 
+      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                        
         }                                        
 }">
 <option value="Blank">--
@@ -190,8 +105,6 @@ document.getElementById('myTextLife2').value = parseInt(document.getElementById(
 <section align="center" style="position:static; width:1400px; height: 300px; border: 2px solid black; border-radius:5px; margin: 5px auto; background-color:#123456">
 <img src="Jyles-Idle.gif" id="mySpan01" title="Player" style="position:absolute; left:200; top:310; width:100px; height:100px; z-index:1"></img><br>
 <img src="Enemy.gif" id="mySpan02" title="Opponent" style="position:absolute; left:1300; top:310; width:100px; height:100px; z-index:0"></img><br>
-<span title="b1" id="myBullet1" style="visibility:hidden; position:absolute; left:100; top:150; width:45; height:30">
-<font color=red>x</font></span><br>
 </section>
 <section align=center style="position:static; width:1400px; height: 100px; border: 2px solid black; border-radius:5px; margin: 5px auto; background-color:black; color:white">
 <table border="2" align=center style="color: white; text-align: center; margin: 5px auto; background-color:black;">
