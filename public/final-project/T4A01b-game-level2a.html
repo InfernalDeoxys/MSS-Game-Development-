@@ -3,15 +3,6 @@
 
 <script>
    
-document.myXmove = 10   
-document.myYmove = 5
-
-document.myXspeed = 150 
-document.myYspeed = 200 
-
-document.myXtimer = 0;
-document.myYtimer = 0;
-   
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -71,39 +62,6 @@ function mySpecialRecoil(){
 <body style="background-color: #666666;">
 
 <h1 align=center>Final Project - Level 1: First Fight</h1>
-
-<p id="demo" style="color:white">What will you do?</p><br><br>
-  
-<select size=1 id="AttackMenu" onChange="{
- //alert()
- if (this.value=='Attack'){
-        alert('You strike with your weapon!')
-        setTimeout(document.myXtimer)
-        document.myXtimer = setInterval( myXAuto , document.myXspeed);                                
-        if(myHitOther('mySpan01', 'mySpan02')){
-   document.getElementById('mySpan01').style.left = 
-      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX1pixels)
-      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                   
-}                                 
-        }
-if (this.value=='RusticStrike'){
-        alert('You used the speciality Rustic Strike!')
-        setTimeout(document.myXtimer)
-        document.myXtimer = setInterval( myXAuto , document.myXspeed);                                 
-        document.getElementById('mySpan01').style.left = 
-parseInt(document.getElementById('mySpan01').style.left) + document.myX2pixels 
-document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 2                                         
-        if(myHitOther('mySpan01', 'mySpan02')){
-   document.getElementById('mySpan01').style.left = 
-      parseInt(document.getElementById('mySpan01').style.left) + ( -1 * document.myX2pixels)
-      document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 3                                   
-}                                 
-        }                                        
-}">
-<option value="Blank">--
-<option value="Attack">Normal Attack
-<option value="RusticStrike">Rustic Strike
-</select><br>
 
 <section align="center" style="position:static; width:1400px; height: 300px; border: 2px solid black; border-radius:5px; margin: 5px auto; background-color:#123456">
 <img src="2baMap.png" align="center"></img>
