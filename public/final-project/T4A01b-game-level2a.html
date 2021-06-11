@@ -3,6 +3,15 @@
 
 <script>
    
+document.myXmove = 10   
+document.myYmove = 5
+
+document.myXspeed = 150 
+document.myYspeed = 200 
+
+document.myXtimer = 0;
+document.myYtimer = 0;
+   
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -21,36 +30,17 @@ function myHitOther(my1,my2){
 }
 function myCheckAll(){
 if(myHitOther('mySpan01', 'mySpan02')){
-   document.getElementById('myTextLife1').value = parseInt(document.getElementById('myTextLife1').value) - 1 //this would've been enemy counterattack with bullet, but due to time :(
-   document.getElementById('myTextLife2').value = parseInt(document.getElementById('myTextLife2').value) - 2
-   document.myXmove = document.myXmove * -1
+   alert('Time to fight!')  
+   location = 'T4A01c-game-level2b.html'
   }
-   if (parseInt(document.getElementById('mySpan01').style.left) < 200) {  // if we hit the left wall
-    document.myXmove = document.myXmove * -1   // then bounce
-    clearTimeout(document.myXtimer);  
-}
 
-if (parseInt(document.getElementById('mySpan01').style.left) + 65 > window.innerWidth) {  // if we hit the right wall
-    document.myXmove = document.myXmove * -1   // then bounce
-}
-if(parseInt(document.getElementById('myTextLife1').value)  <=0  ){    // life points at zero
-    alert('You Lose!')
-    location = 'T4A01-game-level1.html'    // refresh page
-  }
 if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life points at zero
     document.getElementById('mySpan02').style.left = '-400px'
     alert('You Win!')
-    location = 'T4A01b-game-level2a.html'
+    location = 'T4A01c-game-level2b.html'
   }
 }
-   function myXAuto(){
-  document.getElementById('mySpan01').style.left = parseInt(document.getElementById('mySpan01').style.left) + document.myXmove
-  myCheckAll()    
-}
-function mySpecialRecoil(){
-
-}
-   
+ 
    document.myX1pixels = 995
    document.myX2pixels = 750
   document.myYpixels = 70
@@ -63,8 +53,13 @@ function mySpecialRecoil(){
 
 <h1 align=center>Final Project - Level 1: First Fight</h1>
 
+<p id="demo" style="color:white">What will you do?</p><br><br>
+
 <section align="center" style="position:static; width:1400px; height: 300px; border: 2px solid black; border-radius:5px; margin: 5px auto; background-color:#123456">
-<img src="2baMap.png" align="center" style="width:1280px; height:780px"></img>
+<img src="Jyles-Idle.gif" id="mySpan01" title="Player" style="position:absolute; left:200; top:310; width:100px; height:100px; z-index:3"></img><br>
+<img src="Enemy.gif" id="mySpan02" title="Opponent" style="position:absolute; left:1300; top:310; width:100px; height:100px; z-index:3"></img><br>
+<img align=center src="2baMap.png" style="position:absolute; width: 1280px; height: 720px; top:310; z-index: 0"></img><br>
+<img align=center src="grid.png" style="position:absolute; width: 1280px; height: 720px; top:310; z-index: 1"></img><br>
 </section>
 </body>
 </html>
