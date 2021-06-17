@@ -3,15 +3,6 @@
 
 <script>
    
-document.myXmove = 10   
-document.myYmove = 5
-
-document.myXspeed = 150 
-document.myYspeed = 200 
-
-document.myXtimer = 0;
-document.myYtimer = 0;
-   
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
    right1  = left1 + parseInt(document.getElementById(my1).style.width)
@@ -40,11 +31,7 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
     location = 'T4A01c-game-level2b.html'
   }
 }
- 
-   document.myX1pixels = 995
-   document.myX2pixels = 750
-  document.myYpixels = 70
-   
+
 </script>
 </head>
 
@@ -87,7 +74,7 @@ if(parseInt(document.getElementById('myTextLife2').value)  <=0  ){    // life po
 
 <h1 align=center>Final Project - Level 2: Map to Combat</h1>
 
-<p id="demo" style="color:white">What will you do?</p><br><br>
+<p id="demo" style="color:white">Use WASD and directional keys to move!</p><br><br>
 
 <section align="center" style="position:static; width:1280px; height: 720px; margin: 5px auto; top:310; background-colour:">
 <img src="Jyles-Idle.gif" id="mySpan01" title="Player" style="position:absolute; left:340; top:395; width:80px; height:80px; z-index:2"></img><br>
